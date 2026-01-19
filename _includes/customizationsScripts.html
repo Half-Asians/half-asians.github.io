@@ -5,3 +5,7 @@
 {% for javascript in site.data.customs.custom-js %}
     <script src="{{ javascript | relative_url }}"></script>
 {% endfor %}
+
+{%- comment -%} Goatcounter Analytics {%- endcomment -%}
+<script data-goatcounter="https://half-asians.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>

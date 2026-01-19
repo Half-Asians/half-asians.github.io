@@ -1,60 +1,35 @@
-<h1><a href="https://github.com/ItsPatrq/minimal-music-project/"><img src="https://raw.githubusercontent.com/ItsPatrq/minimal-music-project/master/assets/img/favicon.ico" height="21" alt="minimal-categorized logo" /> minimal-music-project Jekyll theme </h1></a>
+# Half-Asians Website
 
-[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/itspatrq/minimal-music-project/master/LICENSE.txt)
+This is the official website for Half-Asians, built using Jekyll and based on the [minimal-music-project](https://github.com/ItsPatrq/minimal-music-project) theme.
+
+[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE.txt)
 [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.9-blue.svg)](https://jekyllrb.com/)
-[![Gem Version](https://badge.fury.io/rb/minimal-music-project.svg)](https://badge.fury.io/rb/minimal-music-project)
-<a href="https://ko-fi.com/itspatrq">
-  <img height="20" src="https://www.ko-fi.com/img/githubbutton_sm.svg"
-    alt="Donate (Ko-fi)" />
-</a>
-<a href="https://jekyll-themes.com">
-    <img src="https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg" height="20" alt="Jekyll Themes Shield" loading="lazy">
-</a>
 
+## Getting Started
 
-minimal-music-project is a flexible, extendable Jekyll theme. With this theme it's plain simple to create a good looking website for a music band with all the required components to list all releases and news. Demo is available [here](https://minimal-music-project.netlify.app/).
+This site is built with Jekyll, a static site generator. To run it locally:
 
-![layout examples](https://raw.githubusercontent.com/ItsPatrq/minimal-music-project/master/screenshot.png)
+1. Install dependencies:
 
-## Installation
+   ```bash
+   bundle install
+   ```
 
-There are three ways to install:
+2. Start the development server:
 
-* As a ruby gem theme:
+   ```bash
+   bundle exec jekyll serve
+   ```
 
-    Add this line to your Jekyll site's `Gemfile`:
+3. Open your browser at `http://localhost:4000`
 
-    ```ruby
-    gem "minimal-categorized"
-    ```
+The site will automatically regenerate as you make changes to the content.
 
-    And add this line to your Jekyll site's `_config.yml`:
+## Site Structure
 
-    ```yaml
-    theme: minimal-categorized
-    ```
+This site uses the `jekyll-paginate-v2` plugin for pagination and `jekyll-seo-tag` for SEO tags. Configuration is managed through the `_config.yml` file and various YAML files in the `_data` directory.
 
-    And then execute:
-
-        $ bundle
-
-    Or install it yourself as:
-
-        $ gem install minimal-categorized
-
-* As a remote theme (GitHub Pages compatible)
-
-    In your Jekyll site's _config.yml remove other themes and add this entry:
-    ```
-    remote_theme: ItsPatrq/minimal-categorized
-    ```
-
-* Forking/directly copying all of the theme files into your project.
-
-## Usage
-This theme uses pager plugin  `jekyll-paginate-v2` for pagination and `jekyll-seo-tag` for seo tags. It can be configured in main _config file.
-
-Configuration via .yml files
+### Configuration Files
 
 Structure of `_data/menu.yml`:
 
@@ -114,29 +89,47 @@ Each post can have it's own associated player. Information on how to embed the p
 
 * soundcloud - src should be full url to song
 * bandcamp - on a "embed song" option on bandcamp, everything after *EmbeddedPlayer/* in generated code should be put to src parameter in front matter
-* spotify - src should be id of the song. It can be acquired via "copy song link", e.g. for url https://open.spotify.com/track/67IdIp2ij8oqTFsSguvy2I?si=f735480b74414902 the src should be 67IdIp2ij8oqTFsSguvy2I
-* spotifyalbum - same as "spotify", but src id of an album
-* spotifyplaylist - same as "spotify", but src id of a playlist
-* spotifyepisode - same as "spotify", but src id of a podcast episode
-* spotifyshow - same as "spotify", but src if of a podcast serie (show)
-* youtube - src should be the *v* uri parameter, e.g. for url https://www.youtube.com/watch?v=dfdruxvE9-0 the src should be dfdruxvE9-0
-* anchor.fm - src is the full episode name (e.g. for URL https://anchor.fm/sucias/episodes/Not-All-Men-e15v6dv src should be Not-All-Men-e15v6dv)
+* youtube - src should be the *v* uri parameter, e.g. for url <https://www.youtube.com/watch?v=dfdruxvE9-0> the src should be dfdruxvE9-0
 * audio_file - src should be path to file. Additionaly, required properties are name of the song (it will display in player) and boolean value *is\_relative\_url* (for easy access to files served from the same domain)
 
-## Contributing
+## Adding Content
 
-Bug reports and pull requests are welcome on [GitHub](https://github.com/ItsPatrq/minimal-music-project). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+### Adding News/Posts
 
-## Development
+Create new markdown files in `home/_posts/` following the naming convention: `YYYY-MM-DD-title.markdown`
 
-To set up your environment to develop this theme, run `bundle install`.
+### Adding Releases
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+Create new markdown files in `discography/_posts/` following the same naming convention.
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `minimal-music-project.gemspec` accordingly.
+### Adding Collaborations
+
+Create new markdown files in `collaborations/_posts/`.
+
+## Credits
+
+This website is built using the [minimal-music-project](https://github.com/ItsPatrq/minimal-music-project) Jekyll theme.
 
 ## License
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+This project uses a **dual licensing** approach:
+
+### Code License (MIT)
+
+All code, scripts, stylesheets, and technical implementation files are licensed under the [MIT License](LICENSE.txt).
+
+* Original theme: Copyright (c) 2021 Patryk Bieszke  
+* Website modifications: Copyright (c) 2026 Half-Asians
+
+The MIT License allows anyone to freely use, modify, and distribute the code.
+
 Custom Volume Slider was developed with the fundaments based on [codepen project](https://codepen.io/EmNudge/pen/rRbLJQ), thus this component is licensed under [Copyright (c) 2021 by EmNudge](https://codepen.io/EmNudge/pen/rRbLJQ).
+
+### Content License (All Rights Reserved)
+
+All creative content including blog posts, music, images, videos, and artwork is:
+
+* Copyright (c) 2026 Half-Asians
+* **All Rights Reserved** - may not be reproduced or distributed without permission
+
+For content licensing inquiries, please contact the band directly.
